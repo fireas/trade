@@ -6,15 +6,19 @@ from django.shortcuts import reverse
 # Create your models here.
 
 GENRE_CHOICES = (
-    ("1", "Genre 1"),
-    ("2", "Genre 2"),
-    ("3", "Genre 3"),
-    ("4", "Genre 4"),
-    ("5", "Genre 5"),
-    ("6", "Genre 6"),
-    ("7", "Genre 7"),
-    ("8", "Genre 8"),
-    ("9", "Genre 9")
+    ("1", "Aventure & Action"),
+    ("2", "Classiques"),
+    ("3", "Espionnage"),
+    ("4", "Fantastique"),
+    ("5", "Frisson & Terreur"),
+    ("6", "Policier"),
+    ("7", "Historique"),
+    ("8", "Roman"),
+    ("9", "Science-Fiction"),
+    ("10", "Thriller"),
+    ("11", "Mangas"),
+    ("12", "Humour"),
+    ("13", "Politique")
 )
 
 
