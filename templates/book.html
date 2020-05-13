@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Product Page
+{% endblock title %}
+  
+
+{% block content %}
+  <!-- Navbar -->
+  {% include 'navbar.html' %}
+  <!-- Navbar -->
+  
+    <!--Main layout-->
+    <main class="">
+      <div class="container dark-grey-text mt-5">
+  
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+  
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+  
+            <img src="{{object.image.url}}" class="img-fluid" alt="">
+  
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+  
+            <!--Content-->
+            <div class="p-4">
+
+              
+              {% if object.get_tradeType_display == "Sale" %}
+
+              <div class="mb-3">
+                <a href="">
+                  <span class="badge purple mr-1">For Sale</span>
+                </a>
+              </div>
+
+              <p>
+                <span class="lead font-weight-bold">Titre: </span>
+                <span>{{object.title}}</span>
+              </p>
+
+              <p>
+                <span class="lead font-weight-bold">Auteur: </span>
+                <span>{{object.author}}</span>
+              </p>
+
+              <p class="lead">
+                <span class="lead font-weight-bold">Prix: </span>
+                <span>{{object.price}}DT</span>
+              </p>
+  
+              <p class="lead font-weight-bold">Description:</p>
+  
+              <p>{{object.description}}</p>
+
+              {% else %}
+
+              <div class="mb-3">
+                <a href="">
+                  <span class="badge purple mr-1">For {{object.get_tradeType_display}}</span>
+                </a>
+              </div>
+
+              <p>
+                <span class="lead font-weight-bold">Titre: </span>
+                <span>{{object.title}}</span>
+              </p>
+
+              <p>
+                <span class="lead font-weight-bold">Auteur: </span>
+                <span>{{object.author}}</span>
+              </p>
+
+  
+              <p class="lead font-weight-bold">Description:</p>
+  
+              <p>{{object.description}}</p>
+
+              {% endif %}
+                
+  
+            </div>
+            <!--Content-->
+  
+          </div>
+          <!--Grid column-->
+  
+        </div>
+        <!--Grid row-->
+  
+      </div>
+    </main>
+    <!--Main layout-->
+  
+{% endblock content %}
+  

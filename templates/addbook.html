@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<main>
+
+  <!--Section: Products v.3-->
+  <section class=" mb-4">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn d-flex justify-content-center">
+
+      <div class="col-lg-8 col-md-5">
+
+        <!--Card-->
+        <div class="card">
+
+          <!--Card content-->
+          <div class="card-body">
+
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="row d-flex align-items-center ">
+
+                <div class="col-lg-6 col-md-6 d-flex flex-column">
+
+                  <!-- Default input -->
+                  <div class="form-group">
+                    <label for="bookname">Nom du Livre:</label>
+                    {{ form.title }}
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                    <label for="bookauthor">Auteur du Livre:</label>
+                    {{ form.author }}
+                  </div>
+                  <div class="form-group">
+                    <label for="bookauthor">Le genre du Livre:</label>
+                    {{ form.genre }}
+                  </div>
+                  <div class="form-group">
+                    <label for="bookauthor">Type déchange:</label>
+                    {{ form.tradeType }}
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                    <label for="bookauthor">Prix:(Pour vente)</label>
+                    {{ form.price }}
+                  </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 d-flex flex-column">
+
+                  <!-- Default input -->
+                  <div class="form-group">
+                    <label for="bookauthor">Description du Livre:</label>
+                    {{ form.description }}
+                  </div>
+                  <button type="button" class="btn btn-outline-primary btn-rounded waves-effect"
+                    onclick="document.getElementById('bookimage').click();">Photo du livre</button>
+
+                  <div class="md-form ml-3 mr-4">
+                    {{ form.image }}
+                  </div>
+
+                </div>
+              </div>
+
+                
+                
+                
+
+
+
+
+
+
+              <div class="d-flex justify-content-center">
+                <button class="btn btn-primary btn-sm " type="submit">Connection</button>
+              </div>
+
+
+            </form>
+
+          </div>
+
+        </div>
+        <!--/Card-->
+
+      </div>
+
+    </div>
+  </section>
+  <!--Section: Products v.3-->
+
+</main>
+
+
+
+
+
+
+{% endblock %}
