@@ -107,5 +107,7 @@ LOGIN_REDIRECT_URL = "/"
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_LOGOUT_ON_GET = True
 
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
