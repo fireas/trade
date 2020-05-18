@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 from django.conf import settings
 from django.http import Http404
@@ -45,6 +46,7 @@ class HomeView(FilterHomeView):
 class BookDetailView(DetailView):
     model = Book
     template_name = "book.html"
+    success_url = reverse_lazy('core:mybooks')
 
 def checkout_view(request):
     context = {
@@ -88,6 +90,11 @@ class MyBooksView(LoginRequiredMixin, ListView):
         context['mybooks_active'] = 'active'
         return context
 
+class BookModifyView(DetailView):
+    model = Book
+    template_name = "modify.html"
+    context_object_name = 'book'
+    success_url = reverse_lazy('core:mybooks')
 
 
 

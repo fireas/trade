@@ -60,6 +60,15 @@
   
               <p>{{object.description}}</p>
 
+              
+              {% if object.user == request.user %}
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" value="Supprimer le livre">
+                </form>  
+              {% endif %}
+                
+
               {% else %}
 
               <div class="mb-3">
@@ -83,6 +92,15 @@
   
               <p>{{object.description}}</p>
 
+
+              {% if object.user == request.user %}
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" value="Supprimer le livre">
+                </form>  
+              {% endif %}
+
+              
               {% endif %}
                 
   
